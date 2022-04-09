@@ -6,6 +6,8 @@ from account import urls as accounturls
 
 urlpatterns = [
                   path('admin/', admin.site.urls),
-                  path('accounts/', include(accounturls))
+                  path('accounts/', include(accounturls)),
+                  path('verification/', include('verify_email.urls')),
+
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL,
                                                                                          document_root=settings.STATIC_ROOT)
